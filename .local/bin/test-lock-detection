@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Test script to verify lock detection functionality
+# This script helps test the dual lock detection mechanism (logind + process)
+
+set -e
+
+echo "=== Stasis Lock Detection Test ==="
+echo ""
+
+# Check if busctl is available
+if ! command -v busctl &> /dev/null; then
+    echo "❌ ERROR: busctl is not available. This is required for the logind lock detection."
+    echo "   Please install systemd (busctl is part of systemd)."
+    exit 1
+fi
+
+echo "✓ busctl is available"
+echo ""
+
+# Test 1: Check if we can query logind
+echo "Test 1: Querying systemd logind for current lock state..."
+if busctl get-property --system -- org.freedesktop.login1 /org/freedesktop/login1/session/auto org.freedesktop.login1.Session LockedHint 2>/dev/null; then
+    echo "✓ Successfully queried logind"
+else
+    echo "❌ Failed to query logind. Make sure you're running on a systemd-based system."
+    exit 1
+fi
+echo ""
+
+# Test 2: Show current lock state
+echo "Test 2: Current lock state..."
+LOCK_STATE=$(busctl get-property --system -- org.freedesktop.login1 /org/freedesktop/login1/session/auto org.freedesktop.login1.Session LockedHint 2>/dev/null | awk '{print $2}')
+
+if [ "$LOCK_STATE" = "true" ]; then
+    echo "🔒 Session is currently LOCKED"
+elif [ "$LOCK_STATE" = "false" ]; then
+    echo "🔓 Session is currently UNLOCKED"
+else
+    echo "❓ Unknown lock state: $LOCK_STATE"
+fi
+echo ""
+
+# Test 3: Monitor lock state changes
+echo "Test 3: Monitoring lock state changes..."
+echo "This will watch for lock/unlock events in real-time."
+echo "Try locking/unlocking your screen to see if it's detected."
+echo "Press Ctrl+C to stop."
+echo ""
+
+# Initial state
+LAST_STATE="$LOCK_STATE"
+echo "Initial state: $LAST_STATE"
+echo "Watching for changes..."
+echo ""
+
+while true; do
+    sleep 1
+    CURRENT_STATE=$(busctl get-property --system -- org.freedesktop.login1 /org/freedesktop/login1/session/auto org.freedesktop.login1.Session LockedHint 2>/dev/null | awk '{print $2}')
+
+    if [ "$CURRENT_STATE" != "$LAST_STATE" ]; then
+        TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+        if [ "$CURRENT_STATE" = "true" ]; then
+            echo "[$TIMESTAMP] 🔒 LOCKED - Lock detected!"
+        else
+            echo "[$TIMESTAMP] 🔓 UNLOCKED - Unlock detected!"
+        fi
+        LAST_STATE="$CURRENT_STATE"
+    fi
+done

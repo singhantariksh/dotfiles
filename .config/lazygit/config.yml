@@ -1,0 +1,27 @@
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    searchingActiveBorderColor:
+      - "#ff9e64"
+      - "bold"
+    selectedLineBgColor:
+      - "#283457"
+    unstagedChangesColor:
+      - "#db4b4b"
+    activeBorderColor:
+      - "#ff9e64"
+      - "bold"
+    cherryPickedCommitBgColor:
+      - "#bb9af7"
+    cherryPickedCommitFgColor:
+      - "#7aa2f7"
+    defaultFgColor:
+      - "#c0caf5"
+    inactiveBorderColor:
+      - "#27a1b9"
+    optionsTextColor:
+      - "#7aa2f7"
+
+    authorColors:
+      "singhantariksh": "#9ece6a"
+      "singhantariksh": "#e0af68"

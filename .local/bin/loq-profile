@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case "$1" in
+quiet | low-power | 1)
+  echo "low-power" | sudo tee /sys/firmware/acpi/platform_profile
+  echo "Switched to Quiet mode"
+  ;;
+balanced | 2)
+  echo "balanced" | sudo tee /sys/firmware/acpi/platform_profile
+  echo "Switched to Balanced mode"
+  ;;
+balanced-performance | balanced-perf | 3)
+  echo "balanced-performance" | sudo tee /sys/firmware/acpi/platform_profile
+  echo "Switched to Balanced-Performance mode"
+  ;;
+performance | perf | 0)
+  echo "performance" | sudo tee /sys/firmware/acpi/platform_profile
+  echo "Switched to Performance mode"
+  ;;
+*)
+  echo "Current mode: $(cat /sys/firmware/acpi/platform_profile)"
+  echo "Usage: lenovomode [quiet|balanced|balanced-perf|perf]"
+  ;;
+esac

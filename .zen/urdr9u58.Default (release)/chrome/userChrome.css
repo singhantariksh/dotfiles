@@ -1,0 +1,213 @@
+/* Tokyo Night userChrome.css */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --- Core Tokyo Night Palette --- */
+    --zen-primary-color: #7aa2f7 !important; /* Terminal Blue */
+    --zen-colors-primary: #414868 !important; /* Terminal Black (used for surface) */
+    --zen-colors-secondary: #414868 !important;
+    --zen-colors-tertiary: #1a1b26 !important; /* Night Background */
+    --zen-colors-border: #7aa2f7 !important;
+
+    /* --- Text & Icons --- */
+    --lwt-text-color: #c0caf5 !important; /* Terminal White */
+    --toolbarbutton-icon-fill: #7aa2f7 !important;
+    --toolbar-field-color: #c0caf5 !important;
+    --toolbar-field-focus-color: #c0caf5 !important;
+    --toolbar-color: #c0caf5 !important;
+    --newtab-text-primary-color: #c0caf5 !important;
+
+    /* --- Backgrounds --- */
+    --toolbar-bgcolor: #414868 !important;
+    --zen-themed-toolbar-bg: #1a1b26 !important;
+    --zen-main-browser-background: #1a1b26 !important;
+    --toolbox-bgcolor-inactive: #1a1b26 !important;
+    --newtab-background-color: #1a1b26 !important;
+
+    /* --- Popups & Menus --- */
+    --arrowpanel-color: #c0caf5 !important;
+    --arrowpanel-background: #1a1b26 !important;
+
+    /* --- Sidebar --- */
+    --sidebar-text-color: #c0caf5 !important;
+    --lwt-sidebar-text-color: #c0caf5 !important;
+    --lwt-sidebar-background-color: #16161e !important; /* Slightly darker "Storm" if available, or #1a1b26 */
+
+    /* --- Tab Selection --- */
+    --tab-selected-textcolor: #7aa2f7 !important;
+
+    /* --- URL Bar Focus Variables --- */
+    --urlbarView-highlight-background: rgba(122, 162, 247, 0.15) !important;
+    --urlbarView-highlight-color: #c0caf5 !important;
+  }
+
+  /* --- Element Specific Overrides --- */
+
+  #permissions-granted-icon {
+    color: #1a1b26 !important;
+  }
+
+  .sidebar-placesTree {
+    background-color: #1a1b26 !important;
+  }
+
+  #zen-workspaces-button {
+    background-color: #1a1b26 !important;
+  }
+
+  #TabsToolbar {
+    background-color: #1a1b26 !important;
+  }
+
+  .urlbar-background {
+    background-color: #1a1b26 !important;
+  }
+
+  .content-shortcuts {
+    background-color: #1a1b26 !important;
+    border-color: #7aa2f7 !important;
+  }
+
+  /* Default URL text color (accent) */
+  .urlbarView-url {
+    color: #7aa2f7 !important;
+  }
+
+  #zenEditBookmarkPanelFaviconContainer {
+    background: #1a1b26 !important;
+  }
+
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: #414868 !important;
+      }
+    }
+  }
+
+  toolbar .toolbarbutton-1 {
+    &:not([disabled]) {
+      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+        fill: #1a1b26; /* Dark icon on active state */
+      }
+    }
+  }
+
+  /* --- Identity Colors (Tab Containers) --- */
+  .identity-color-blue {
+    --identity-tab-color: #7aa2f7 !important;
+    --identity-icon-color: #7aa2f7 !important;
+  }
+
+  .identity-color-turquoise {
+    --identity-tab-color: #73daca !important;
+    --identity-icon-color: #73daca !important;
+  }
+
+  .identity-color-green {
+    --identity-tab-color: #9ece6a !important;
+    --identity-icon-color: #9ece6a !important;
+  }
+
+  .identity-color-yellow {
+    --identity-tab-color: #e0af68 !important;
+    --identity-icon-color: #e0af68 !important;
+  }
+
+  .identity-color-orange {
+    --identity-tab-color: #ff9e64 !important;
+    --identity-icon-color: #ff9e64 !important;
+  }
+
+  .identity-color-red {
+    --identity-tab-color: #f7768e !important;
+    --identity-icon-color: #f7768e !important;
+  }
+
+  .identity-color-pink {
+    --identity-tab-color: #bb9af7 !important;
+    --identity-icon-color: #bb9af7 !important;
+  }
+
+  .identity-color-purple {
+    --identity-tab-color: #9d7cd8 !important;
+    --identity-icon-color: #9d7cd8 !important;
+  }
+
+  hbox#titlebar {
+    background-color: #1a1b26 !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: #1a1b26 !important;
+  }
+
+  /* Dim unloaded tabs */
+  .tabbrowser-tab[pending] {
+    filter: grayscale(1);
+    opacity: 0.75;
+  }
+
+  /* Selected URLs contrast visibility issue fix */
+  .urlbarView-row[descendant-selected] {
+    background-color: rgba(122, 162, 247, 0.2) !important;
+    color: #c0caf5 !important;
+  }
+
+  .urlbarView-row[descendant-selected] .urlbarView-url {
+    color: #7aa2f7 !important;
+  }
+
+  .urlbarView-row[descendant-selected] .urlbarView-title {
+    color: #c0caf5 !important;
+  }
+
+  /* Zen toast/indicator contrast visibility issue fix */
+  #zen-toast-container {
+    color: #020304 !important;
+  }
+
+  /* Pane UI button visibility issue fix */
+  #PanelUI-menu-button[open] .toolbarbutton-icon {
+    fill: #7aa2f7 !important;
+  }
+
+  /* Remove dark background from tab icon overlays (e.g. Mute/PiP icon) */
+  /* Targeting the wrapper first */
+  #navigator-toolbox[zen-sidebar-expanded="true"] #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[zen-essential="true"] .tab-icon-stack .tab-icon-overlay:not([crashed]),
+  /* Also specifically targeting the [muted] state to ensure it gets overwritten */
+  #navigator-toolbox[zen-sidebar-expanded="true"] #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[zen-essential="true"] .tab-icon-stack .tab-icon-overlay:not([crashed])[muted] {
+    fill: #7aa2f7 !important;
+    color: #7aa2f7 !important;
+    background-image: none !important;
+    background-color: rgba(20, 20, 20, 0.5) !important;
+    padding: 2px !important;
+    scale: 1.2 !important;
+  }
+
+  /* Fix: Sidebar headers missing theme colors */
+  #sidebar-header,
+  #sidebar-search-container {
+    background-color: #1a1b26 !important;
+  }
+  #input {
+    &[type="search"] {
+      background-color: #24283b !important;
+    }
+  }
+  #viewButton {
+    background-color: #24283b !important;
+  }
+  .menupopup-arrowscrollbox {
+    background-color: #24283b !important;
+    border: 1.5px solid #A0A0AC !important;
+    margin-top: 15px !important;
+  }
+
+  /* Fix: urlbar input container having the same color as the toobar */
+  :root:not([zen-single-toolbar="true"]):not([zen-has-empty-tab="true"])
+    #urlbar:not([breakout-extend="true"])
+    .urlbar-input-container {
+    background-color: #24283b !important;
+  }
+}

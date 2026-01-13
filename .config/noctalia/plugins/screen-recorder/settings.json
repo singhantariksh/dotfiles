@@ -1,0 +1,13 @@
+{
+  "directory": "/home/antariksh/Videos/Screencasts",
+  "filenamePattern": "unix",
+  "frameRate": "60",
+  "audioCodec": "opus",
+  "videoCodec": "av1",
+  "quality": "high",
+  "colorRange": "limited",
+  "showCursor": true,
+  "copyToClipboard": true,
+  "audioSource": "both",
+  "videoSource": "portal"
+}

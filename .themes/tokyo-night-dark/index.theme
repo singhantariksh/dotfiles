@@ -1,0 +1,6 @@
+[X-GNOME-Metatheme]
+Name=tokyo-night-dark
+Type=X-GNOME-Metatheme
+Comment=tokyo-night-dark theme made from adw-gtk3-dark theme and matugen
+Encoding=UTF-8
+GtkTheme=tokyo-night-dark

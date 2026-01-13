@@ -1,0 +1,14 @@
+[[plugin.deps]]
+use = "yazi-rs/flavors:tokyo-night"
+rev = "9276ffa"
+hash = "99aa06d3014798d86001c324468d497f"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "a0b1d9d"
+hash = "b33673cdc5d3d68b478085e3e06182d9"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "9276ffa"
+hash = "b951d27afe197d154f6da9683b46c5f8"

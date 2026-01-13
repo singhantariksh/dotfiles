@@ -1,0 +1,34 @@
+# User / group columns
+user: "#7878f0"         # purple
+group: "#7aa2f7"        # blue (in case you ever enable the group column)
+
+permission:
+  read: "#84c242"       # green
+  write: "#e0af68"      # yellow
+  exec: "#f7768e"       # red_alt
+  exec-sticky: "#ff7e33" # orange
+  no-access: "#2ac3de"  # cyan (distinct but cooler, for denied)
+
+size:
+  none: "#7aa2f7"       # blue (very small / 0)
+  small: "#73daca"      # teal
+  medium: "#9ece6a"     # current_line (greenish)
+  large: "#ff7e33"      # orange (pops for big files)
+
+date:
+  hour-old: "#7dcfff"   # blue_alt (fresh)
+  day-old: "#2ac3de"    # cyan
+  older: "#afc3ff"      # muted
+
+git-status:
+  default: "#7aa2f7"        # blue
+  unmodified: "#7aa2f7"     # blue
+  ignored: "#2ac3de"        # cyan
+  new-in-index: "#84c242"   # green
+  new-in-workdir: "#84c242" # green
+  renamed: "#73daca"        # teal
+  typechange: "#e0af68"     # yellow
+  modified: "#e0af68"       # yellow
+  deleted: "#eb6f92"        # red
+  conflicted: "#f7768e"     # red_alt
+

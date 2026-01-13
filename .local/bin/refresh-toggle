@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CURRENT=$(niri msg outputs | grep -A 5 "eDP-1" | grep "Current mode" | grep -oP '\K[0-9]+\.[0-9]+(?= Hz)')
+
+if [[ "$CURRENT" == "60.001" ]]; then
+  niri msg output eDP-1 mode "1920x1080@144.001"
+  notify-send -u low "Refresh Rate: 144Hz" -t 2000
+else
+  niri msg output eDP-1 mode "1920x1080@60.001"
+  notify-send -u low "Refresh Rate: 60Hz" -t 2000
+fi

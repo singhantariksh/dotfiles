@@ -1,0 +1,73 @@
+# vim: syntax=ruby
+
+@author "Antariksh Singh"
+@description "Dormant configuration file"
+
+dormant:
+  monitor_media true
+  # Stop remote media from affecting pause
+  ignore_remote_media true
+  respect_idle_inhibitors true
+
+  debounce_seconds 3
+  
+  lid_close_action "qs -c noctalia-shell ipc call lockScreen lock && systemctl suspend"
+  lid_open_action "wake"
+
+  inhibit_apps [
+    "vlc"
+    "mpv"
+    r"steam_app_.*"
+    r".*\.exe"
+  ]
+
+  # Laptop-specific: AC power settings (relaxed timeouts)
+  on_ac:
+    brightness:
+      timeout 180 # 3 min ( 3 min )
+      command "brightnessctl -s set 2%"
+      resume-command "brightnessctl -r"
+    end
+    
+    dpms:
+    timeout 120 # 2 min ( 5 min ) after brightness
+    command "niri msg action power-off-monitors"
+    resume-command "niri msg action power-on-monitors"
+    end
+
+    lock-screen:
+      timeout 120 # 2 min ( 7 min ) after dpmn
+      command "qs -c noctalia-shell ipc call lockScreen lock"
+    end
+    
+    suspend:
+      timeout 780 # 13 min ( 20 min ) after lock screen
+      command "systemctl suspend"
+    end
+  end
+  
+  # Laptop-specific: Battery power settings (aggressive power saving)
+  on_battery:
+    brightness:
+      timeout 120 # 2 min ( 2 min )
+      command "brightnessctl -s set 2%"
+      resume-command "brightnessctl -r"
+    end
+    
+    dpms:
+    timeout 60 # 1 min ( 3 min ) after brightness
+    command "niri msg action power-off-monitors"
+    resume-command "niri msg action power-on-monitors"
+    end
+
+    lock-screen:
+      timeout 120 # 2 min ( 5 min ) after dpms
+      command "qs -c noctalia-shell ipc call lockScreen lock"
+    end
+    
+    suspend:
+      timeout 300 # 5 min ( 10 min ) after lock screen
+      command "systemctl suspend"
+    end
+  end
+end

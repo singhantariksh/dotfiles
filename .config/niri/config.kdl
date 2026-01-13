@@ -1,0 +1,58 @@
+include "input.kdl"
+include "output.kdl"
+include "layout.kdl"
+include "binds.kdl"
+include "window-rules.kdl"
+
+hotkey-overlay {
+  skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/%s.png"
+
+animations {
+}
+
+layer-rule {
+  match namespace="^quickshell-overview$"
+  place-within-backdrop true
+}
+
+debug {
+  honor-xdg-activation-with-invalid-serial
+}
+
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
+
+overview {
+  workspace-shadow {
+    off
+  }
+}
+
+environment {
+  QT_QPA_PLATFORM "wayland"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+cursor {
+  xcursor-theme "ArcDusk"
+  xcursor-size 24
+
+  hide-after-inactive-ms 3000
+  hide-when-typing
+}
+
+gestures {
+  hot-corners {
+    off
+  }
+}
+
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "qs" "-c" "noctalia-shell"

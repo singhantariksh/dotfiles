@@ -1,0 +1,126 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+palette = 'custom'
+
+format = """
+[╭](fg:current_line)\
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$dotnet\
+$golang\
+$gradle\
+$java\
+$lua\
+$nodejs\
+$pulumi\
+$python\
+$rust\
+$cmd_duration\
+[-<<](fg:current_line)\
+$line_break\
+$character\
+"""
+
+# --------------------------------------------------
+# elements
+# --------------------------------------------------
+
+[os]
+format = '[\[ 󰣇 \]](fg:blue)'
+disabled = false
+
+[directory]
+format = '[─](fg:current_line)[\[ $read_only$path \]](fg:purple)'
+read_only = '󰌾 '
+truncation_length = 3
+truncation_symbol = "../"
+
+[git_branch]
+format = '[─](fg:current_line)[\[ $symbol](fg:orange)[ $branch \]](fg:orange)'
+symbol = ''
+
+[git_status]
+disabled = false
+format = '[─](fg:current_line)[\[$all_status$ahead_behind\]](fg:red_alt)'
+
+[cmd_duration]
+min_time = 1000
+format = '[─](fg:current_line)[\[  ](fg:cyan)[$duration \]](fg:cyan)'
+
+[username]
+format = '[─](fg:current_line)[\[  ](fg:teal)[$user \]](fg:teal)'
+show_always = true
+
+[character]
+format = """
+[╰─$symbol](fg:current_line) """
+success_symbol = '[❯](fg:green)'
+error_symbol = '[❯](fg:red)'
+
+[docker_context]
+format = '[─](fg:current_line)[\[  $context \]](yellow)'
+
+[dotnet]
+format = '[─](fg:current_line)[\[  $version \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[golang]
+format = '[─](fg:current_line)[\[  $version \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[gradle]
+format = '[─](fg:current_line)[\[  ($version) \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[java]
+format = '[─](fg:current_line)[\[  ${version} \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[lua]
+format = '[─](fg:current_line)[\[  $version \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[nodejs]
+format = '[─](fg:current_line)[\[  ($version) \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[pulumi]
+format = '[─](fg:current_line)[\[ 󰆦 ($username@)$stack \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[python]
+format = '[─](fg:current_line)[\[  ${pyenv_prefix}(${version} )(\($virtualenv\) ) \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+[rust]
+format = '[─](fg:current_line)[\[ 󱘗 $version \]](yellow)'
+version_format = 'v${major}.${minor}'
+
+# --------------------------------------------------
+# palette
+# --------------------------------------------------
+[palettes.custom]
+
+blue = '#7aa2f7'
+blue_alt = '#7dcfff'
+
+cyan = '#2ac3de'
+teal = '#73daca'
+
+red_alt = '#f7768e'
+red = '#eb6f92'
+
+orange = '#ff7e33'
+
+yellow = '#e0af68'
+
+current_line = '#9ece6a'
+green = '#84c242'
+
+purple = '#9c6df3'
