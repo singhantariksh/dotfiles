@@ -619,7 +619,14 @@ TRACKS GRID
 
 .main-trackList-trackListRow:focus-within,
 .main-trackList-trackListRow:hover {
-  background-color: rgba(var(--spice-rgb-main-secondary), 0.5);
+  background-color: rgba(var(--spice-rgb-main-secondary), 0.8);
+}
+
+/* Selected song + hover */
+/* Currently playing song + hover */
+.main-trackList-trackListRow.main-trackList-selected:hover,
+.main-trackList-trackListRow.main-trackList-active:hover {
+  background-color: rgba(var(--spice-main-secondary),0.5) !important;
 }
 
 /* When song is currently playing */

@@ -284,9 +284,9 @@ binds {
   // Open text editor: zed
   // Super+Shift+N { spawn "zeditor"; }
   // Open note taking app: obsidian
-  Super+Shift+O { spawn "obsidian"; }
-  // Open emoji picker: bemoji
-  Super+semicolon { spawn "bemoji"; }
+  Super+Shift+O { spawn "obsidian" "--enable-blink-features=MiddleClickAutoscroll"; }
+  // Open emoji picker: emote
+  Super+semicolon { spawn "emote"; }
 
   // Execute noctalia: app picker (launcher)
   Ctrl+Shift+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }

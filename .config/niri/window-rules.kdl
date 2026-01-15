@@ -41,6 +41,7 @@ window-rule {
 
 window-rule {
   match app-id="satty" title="Choose*"
+  match app-id="it.mijorus.smile" title="Smile"
   open-floating true
 }
 
