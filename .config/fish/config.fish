@@ -79,7 +79,8 @@ alias lta="lsd --tree -a"
 
 alias cd="z"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
+alias lgdots='lazygit --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
 # ----------
 
 # PATH directories
