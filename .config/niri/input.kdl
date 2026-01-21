@@ -6,7 +6,8 @@ input {
 
       // For example:
       layout "us,us(colemak_dh_ortho)"
-      options "compose:ralt, grp:win_space_toggle, caps:escape"
+      options "compose:ralt, caps:escape"
+      // grp:win_space_toggle,
 
       // If this section is empty, niri will fetch xkb settings
       // from org.freedesktop.locale1. You can control these using
@@ -21,16 +22,10 @@ input {
   // Omitting settings disables them, or leaves them at their default values.
   // All commented-out settings here are examples, not defaults.
   touchpad {
-    // off
     tap
-    // dwt
-    // dwtp
-    // drag false
-    // drag-lock
     natural-scroll
     accel-speed 0.2
     accel-profile "flat"
-    // scroll-method "two-finger"
     disabled-on-external-mouse
   }
 

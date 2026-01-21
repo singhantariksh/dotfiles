@@ -555,7 +555,8 @@
             "enabled": true
         },
         "WebScreenShareFixes": {
-            "enabled": true
+            "enabled": true,
+            "experimentalAV1Support": false
         },
         "WhoReacted": {
             "enabled": false
@@ -604,6 +605,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1767007599593
+        "settingsSyncVersion": 1768754366584
     }
 }

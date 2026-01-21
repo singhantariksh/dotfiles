@@ -81,6 +81,8 @@ alias cd="z"
 
 alias dots='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
 alias lgdots='lazygit --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
+
+alias wlcp ="wl-copy"
 # ----------
 
 # PATH directories

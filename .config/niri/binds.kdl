@@ -259,8 +259,8 @@ binds {
   // purpose of env var is to trigger fastfetch only in shortcut-launched terminals (see fish config), not embedded ones specifically
   // Open terminal emulator: kitty
   Super+Return { spawn "kitty" "-o" "env=_LAUNCHED_FROM_SHORTCUT=1"; }
-  // Open app picker: fuzzel
-  Ctrl+Space { spawn "fuzzel"; }
+  // Open app picker/launcher: fuzzel
+  Super+Space { spawn "fuzzel"; }
   // Open browser: zen
   Super+B { spawn "zen-browser"; }
   // Open browser: helium
@@ -271,8 +271,8 @@ binds {
   Super+D { spawn "vesktop" "--ozone-platform-hint=auto" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open index search: fsearch
   Super+S { spawn "fsearch"; }
-  // Open File explorer: dolphin
-  Super+E { spawn "dolphin"; }
+  // Open File explorer: nautilus
+  Super+E { spawn "nautilus"; }
   // Open TUI File Explorer: yazi
   Super+Shift+E { spawn "kitty" "-e" "yazi"; }
   // Open calculator: qalculate
@@ -289,7 +289,7 @@ binds {
   Super+semicolon { spawn "emote"; }
 
   // Execute noctalia: app picker (launcher)
-  Ctrl+Shift+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+  Super+Shift+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
   // Execute noctalia: control center
   Super+Z { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
   // Execute noctalia: clipboard
@@ -320,4 +320,12 @@ binds {
   Super+Ctrl+Print { spawn "nirishot" "screenshot-screen"; }
   Super+Shift+Print { spawn "nirishot" "screenshot-window"; }
   Super+Alt+Print { spawn "hyprpicker" "-a"; }
+
+  // Niri: Switch Keyboard Layout
+  Ctrl+Super+Space { switch-layout "next"; }
+
+  // Rebind: XF86TouchpadOn
+  XF86TouchpadOn { spawn "toggle_touchpad"; }
+  // Rebind: XF86TouchpadOff
+  XF86TouchpadOff { spawn "toggle_touchpad"; }
 }
