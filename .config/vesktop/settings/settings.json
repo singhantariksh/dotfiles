@@ -337,7 +337,10 @@
             "enabled": false
         },
         "OnePingPerDM": {
-            "enabled": true
+            "enabled": true,
+            "channelToAffect": "both_dms",
+            "allowMentions": false,
+            "allowEveryone": false
         },
         "oneko": {
             "enabled": false
@@ -605,6 +608,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1768754366584
+        "settingsSyncVersion": 1769334300636
     }
 }

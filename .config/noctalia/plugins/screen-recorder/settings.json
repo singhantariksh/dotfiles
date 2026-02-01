@@ -9,5 +9,6 @@
   "showCursor": true,
   "copyToClipboard": true,
   "audioSource": "both",
-  "videoSource": "portal"
+  "videoSource": "portal",
+  "resolution": "original"
 }

@@ -1,16 +1,21 @@
 {
     "sources": [
         {
-            "name": "Official Noctalia Plugins",
+            "enabled": null,
+            "name": "Noctalia Plugins",
             "url": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Kolaveri",
             "url": "https://github.com/rscipher001/noctalia-plugins"
         }
     ],
     "states": {
+        "privacy-indicator": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
         "screen-recorder": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"

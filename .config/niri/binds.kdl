@@ -271,8 +271,8 @@ binds {
   Super+D { spawn "vesktop" "--ozone-platform-hint=auto" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open index search: fsearch
   Super+S { spawn "fsearch"; }
-  // Open File explorer: nautilus
-  Super+E { spawn "nautilus"; }
+  // Open File explorer: dolphin
+  Super+E { spawn "dolphin"; }
   // Open TUI File Explorer: yazi
   Super+Shift+E { spawn "kitty" "-e" "yazi"; }
   // Open calculator: qalculate

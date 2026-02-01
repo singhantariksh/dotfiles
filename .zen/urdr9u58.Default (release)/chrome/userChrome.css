@@ -23,6 +23,7 @@
     --zen-main-browser-background: #1a1b26 !important;
     --toolbox-bgcolor-inactive: #1a1b26 !important;
     --newtab-background-color: #1a1b26 !important;
+    --zen-dialog-background: #1a1b26 !important;
 
     /* --- Popups & Menus --- */
     --arrowpanel-color: #c0caf5 !important;
@@ -200,7 +201,7 @@
   }
   .menupopup-arrowscrollbox {
     background-color: #24283b !important;
-    border: 1.5px solid #A0A0AC !important;
+    border: 1.5px solid #a0a0ac !important;
     margin-top: 15px !important;
   }
 
@@ -209,5 +210,27 @@
     #urlbar:not([breakout-extend="true"])
     .urlbar-input-container {
     background-color: #24283b !important;
+  }
+
+  /* Dialog Button Theming */
+  .dialog-button-box button,
+  .dialog-button-box > button {
+    appearance: none !important;
+    background-color: #24283b !important;
+    color: #c0caf5 !important;
+    border: 1px solid #414868 !important;
+    box-shadow: none !important;
+    transition: background-color 0.1s ease !important;
+  }
+
+  .dialog-button-box button:hover {
+    background-color: rgba(36, 40, 59, 0.8) !important;
+    border-color: #7aa2f7 !important;
+    cursor: pointer !important;
+  }
+
+  .dialog-button-box button:active {
+    background-color: rgba(36, 40, 59, 0.5) !important;
+    transform: scale(0.98) !important;
   }
 }
