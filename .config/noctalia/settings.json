@@ -292,7 +292,7 @@
     },
     "desktopWidgets": {
         "enabled": false,
-        "gridSnap": false,
+        "gridSnap": true,
         "monitorWidgets": [
             {
                 "name": "eDP-1",
@@ -330,6 +330,7 @@
                     {
                         "diskPath": "/",
                         "id": "SystemStat",
+                        "layout": "bottom",
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "CPU",
@@ -339,12 +340,23 @@
                     {
                         "diskPath": "/",
                         "id": "SystemStat",
+                        "layout": "bottom",
                         "roundedCorners": true,
                         "scale": 1,
                         "showBackground": true,
                         "statType": "Memory",
                         "x": 1332,
-                        "y": 176
+                        "y": 193
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Network",
+                        "x": 1332,
+                        "y": 325
                     }
                 ]
             }
