@@ -66,7 +66,7 @@ alias cat="bat"
 alias ff="fastfetch -l none"
 alias ffl="fastfetch"
 
-alias gpp="g++"
+alias gpp="g++ -std=c++23"
 
 alias lg="lazygit"
 

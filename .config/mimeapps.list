@@ -77,3 +77,5 @@ x-scheme-handler/http=zen.desktop
 x-scheme-handler/https=zen.desktop
 x-scheme-handler/koodo-reader=koodo-reader.desktop
 text/css=nvim.desktop
+x-scheme-handler/lunarclient=lunarclient.desktop
+x-scheme-handler/discord-562286213059444737=lunarclient.desktop

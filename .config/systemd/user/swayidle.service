@@ -1,0 +1,12 @@
+[Unit]
+Description=Idle Manager
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swayidle -w timeout 180 'brightnessctl -s set 2%' resume 'brightnessctl -r' timeout 300 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' timeout 420 'qs -c noctalia-shell ipc call lockScreen lock' timeout 1200 'systemctl suspend' before-sleep 'qs -c noctalia-shell ipc call lockScreen lock'
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

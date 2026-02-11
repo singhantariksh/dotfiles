@@ -3,6 +3,31 @@ use = "yazi-rs/flavors:tokyo-night"
 rev = "9276ffa"
 hash = "99aa06d3014798d86001c324468d497f"
 
+[[plugin.deps]]
+use = "uhs-robert/recycle-bin"
+rev = "fa68711"
+hash = "8714306b5cac6359edbacbf545fbd691"
+
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "4eda0bf"
+hash = "778941e7f1ebbacd60f4e254bb3c51de"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "230b9c6"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "230b9c6"
+hash = "270915fa8282a19908449530ff66f7e2"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "230b9c6"
+hash = "6ce49cf5b4c7c0d9cce8a1062ed478d3"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "a0b1d9d"

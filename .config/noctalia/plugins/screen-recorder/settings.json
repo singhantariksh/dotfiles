@@ -10,5 +10,6 @@
   "copyToClipboard": true,
   "audioSource": "both",
   "videoSource": "portal",
-  "resolution": "original"
+  "resolution": "original",
+  "hideInactive": false
 }
