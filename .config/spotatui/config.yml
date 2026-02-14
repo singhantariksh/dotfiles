@@ -7,17 +7,17 @@ keybindings:
   jump_to_album: a
   jump_to_artist_album: A
   jump_to_context: o
-  manage_devices: m
+  manage_devices: d
   decrease_volume: '-'
-  increase_volume: =
+  increase_volume: +
   toggle_playback: space
-  seek_backwards: H
-  seek_forwards: L
+  seek_backwards: '['
+  seek_forwards: ']'
   next_track: n
   previous_track: N
   help: '?'
-  shuffle: s
-  repeat: r
+  shuffle: ctrl-s
+  repeat: ctrl-r
   search: /
   submit: enter
   copy_song_url: y
@@ -25,8 +25,8 @@ keybindings:
   audio_analysis: v
   basic_view: B
   add_item_to_queue: p
-  open_settings: ','
-  save_settings: ','
+  open_settings: alt-,
+  save_settings: alt-s
 behavior:
   seek_milliseconds: 5000
   volume_increment: 10
