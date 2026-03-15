@@ -3,12 +3,11 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 # global editor: nvim
 set -Ux EDITOR nvim 
 
-# overwrite greeting (can disable fastfetch from here)
-# Only show fastfetch when launched from Super+Return shortcut (see niri config)
+# overwrite greeting (can disable fetch from here)
+# Only fetch when launched from Super+Return shortcut (see niri config)
 function fish_greeting
   if set -q _LAUNCHED_FROM_SHORTCUT
-    # fastfetch
-    fastfetch -l none
+    zfetch
     set -e _LAUNCHED_FROM_SHORTCUT
   end
 end
@@ -62,9 +61,6 @@ set -gx LS_COLORS "$(vivid generate tokyonight-night)"
 
 # aliases
 alias cat="bat"
-
-alias ff="fastfetch -l none"
-alias ffl="fastfetch"
 
 alias gpp="g++ -std=c++23"
 

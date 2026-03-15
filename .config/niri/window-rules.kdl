@@ -20,8 +20,6 @@ window-rule {
 }
 
 window-rule {
-  // match app-id="kitty"
-  match app-id="spotify"
   match app-id="vesktop"
   match app-id="zen"
   default-column-width { proportion 0.65; }

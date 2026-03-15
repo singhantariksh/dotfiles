@@ -92,10 +92,10 @@ binds {
   Mod+Page_Down      { focus-workspace-down; }
   Mod+U              { focus-workspace-up; }
   Mod+I              { focus-workspace-down; }
-  Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
   Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-  Mod+Ctrl+U         { move-column-to-workspace-down; }
-  Mod+Ctrl+I         { move-column-to-workspace-up; }
+  Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+  Mod+Ctrl+U         { move-column-to-workspace-up; }
+  Mod+Ctrl+I         { move-column-to-workspace-down; }
 
   // Alternatively, there are commands to move just a single window:
   // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
@@ -207,12 +207,12 @@ binds {
   // * adjust width as a percentage of screen width: "-10%" or "+10%"
   // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
   // set-column-width "100" will make the column occupy 200 physical screen pixels.
-  Mod+Minus { set-column-width "-10%"; }
-  Mod+Equal { set-column-width "+10%"; }
+  Mod+Minus { set-column-width "-5%"; }
+  Mod+Equal { set-column-width "+5%"; }
 
   // Finer height adjustments when in column with other windows.
-  Mod+Shift+Minus { set-window-height "-10%"; }
-  Mod+Shift+Equal { set-window-height "+10%"; }
+  Mod+Shift+Minus { set-window-height "-5%"; }
+  Mod+Shift+Equal { set-window-height "+5%"; }
 
   // Move the focused window between the floating and the tiling layout.
   Mod+T       { toggle-window-floating; }
@@ -284,12 +284,14 @@ binds {
   // Open text editor: zed
   // Super+Shift+N { spawn "zeditor"; }
   // Open note taking app: obsidian
-  Super+Shift+O { spawn "obsidian" "--enable-blink-features=MiddleClickAutoscroll"; }
+  Super+Shift+N { spawn "obsidian" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open emoji picker: emote
   Super+semicolon { spawn "emote"; }
 
   // Execute noctalia: app picker (launcher)
   Super+Shift+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+  // Execute noctalia: settings
+  Super+Shift+Comma { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
   // Execute noctalia: control center
   Super+Z { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
   // Execute noctalia: clipboard
