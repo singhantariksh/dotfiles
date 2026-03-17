@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Lunar Client
+Exec=env DESKTOPINTEGRATION=false DRI_PRIME=1 /usr/bin/lunarclient --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=lunarclient
+StartupWMClass=Lunar Client
+X-AppImage-Version=3.5.19-ow
+Comment=Electron launcher for Lunar Client
+Categories=Game;
+MimeType=x-scheme-handler/discord-562286213059444737;application/x-lcpack;x-scheme-handler/lunarclient;

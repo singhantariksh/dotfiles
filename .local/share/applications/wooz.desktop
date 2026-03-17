@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Wooz
+Exec=/usr/bin/wooz --invert-scroll %U
+Terminal=false
+Type=Application
+Icon=baloo
+Comment=Wooz - zoom for wayland
+MimeType=zoom;
+Categories=Utility;

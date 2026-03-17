@@ -1,0 +1,162 @@
+/* #ui */
+* {
+/*insertroot*/
+  --font-size: 17px;
+  --font-size-link: 12px;
+  --font-weight: normal;
+  --font: "Maple Mono NF", "Source Code Pro", sans-serif;
+  --padding: 0px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+
+  --bg: #1a1b26;
+  --fg: #c0caf5;
+  --accent-fg: #24283b;
+  --border: #101014;
+  --title: #7aa2f7;
+  --title-accent: #bb9af7;
+  --link: #7dcfff;
+  --link-accent: #f7768e;
+  
+  --nbg: #1a1b26;
+  --nfg: #c0caf5;
+  --naccent-fg: #24283b;
+  --nborder: #101014;
+  --ntitle: #7aa2f7;
+  --ntitle-accent: #bb9af7;
+  --nlink: #7dcfff;
+  --nlink-accent: #f7768e;
+
+  font-family: var(--font);
+  font-size: var(--font-size-link);
+}
+
+.HUD {
+  border-radius: 3px;
+  text-transform: lowercase;
+  color: var(--title);
+  max-width: 420px;
+  padding: 10px;
+}
+
+.HUD.D { color: var(--ntitle); }
+
+.HUD:after {
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.HUD.D:after {
+  background: var(--nbg);
+  border: 1px solid var(--nborder);
+}
+
+.LH {
+  color: var(--bg);
+  border: 1px solid var(--border);
+  background: var(--title-accent); /* Hints are now Purple */
+  box-shadow: var(--shadow);
+}
+
+.D .LH {
+  color: var(--nbg);
+  border: 1px solid var(--nborder);
+  background: var(--ntitle-accent);
+}
+
+/* #omni */
+* {
+
+/*insertroot*/
+  --font-size: 17px;
+  --font-size-link: 12px;
+  --font-weight: normal;
+  --font: "Maple Mono NF", "Source Code Pro", sans-serif;
+  --padding: 0px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+
+  --bg: #1a1b26;
+  --fg: #c0caf5;
+  --accent-fg: #24283b;
+  --border: #101014;
+  --title: #7aa2f7;
+  --title-accent: #bb9af7;
+  --link: #7dcfff;
+  --link-accent: #f7768e;
+  
+  --nbg: #1a1b26;
+  --nfg: #c0caf5;
+  --naccent-fg: #24283b;
+  --nborder: #101014;
+  --ntitle: #7aa2f7;
+  --ntitle-accent: #bb9af7;
+  --nlink: #7dcfff;
+  --nlink-accent: #f7768e;
+
+  font-family: var(--font);
+}
+
+body {
+  background: var(--bg);
+  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+#bar, #input, #list {
+  background: var(--bg);
+}
+
+.has-dark #bar, .has-dark #input, .has-dark #list {
+  background: var(--nbg);
+}
+
+#bar::before {
+  content: "➤";
+  position: absolute;
+  left: 20px;
+  font-weight: bold;
+  color: var(--title);
+}
+
+#input {
+  color: var(--fg);
+}
+
+.has-dark #input {
+  color: var(--nfg);
+}
+
+.item.s, .item:hover {
+  background-color: var(--accent-fg);
+}
+
+.has-dark .item.s, .has-dark .item:hover {
+  background-color: var(--naccent-fg);
+}
+
+.item .top { color: var(--title); }
+.has-dark .item .top { color: var(--ntitle); }
+
+.item .top .title match { color: var(--title-accent); }
+.has-dark .item .top .title match { color: var(--ntitle-accent); }
+
+.item .bottom a { color: var(--link); }
+.has-dark .item .bottom a { color: var(--nlink); }
+
+/* #find */
+* {
+/*insertroot*/
+  --bg: #1a1b26;
+  --nbg: #1a1b26;
+  --title-accent: #bb9af7;
+  --ntitle-accent: #bb9af7;
+}
+
+.r {
+  color: var(--title-accent);
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.r.D {
+  color: var(--ntitle-accent);
+  background: var(--nbg);
+}
