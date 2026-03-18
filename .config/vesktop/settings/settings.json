@@ -549,7 +549,8 @@
             "enabled": false
         },
         "VolumeBooster": {
-            "enabled": true
+            "enabled": true,
+            "multiplier": 2
         },
         "WebKeybinds": {
             "enabled": true
@@ -592,6 +593,9 @@
         },
         "CustomCommands": {
             "enabled": false
+        },
+        "NoDefaultHangStatus": {
+            "enabled": false
         }
     },
     "uiElements": {
@@ -608,6 +612,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1773412312152
+        "settingsSyncVersion": 1773774771035
     }
 }

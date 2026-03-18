@@ -327,7 +327,7 @@ binds {
   Ctrl+Super+Space { switch-layout "next"; }
 
   // Rebind: XF86TouchpadOn
-  XF86TouchpadOn { spawn "toggle_touchpad"; }
+  XF86TouchpadOn { spawn "toggle-touchpad"; }
   // Rebind: XF86TouchpadOff
-  XF86TouchpadOff { spawn "toggle_touchpad"; }
+  XF86TouchpadOff { spawn "toggle-touchpad"; }
 }
