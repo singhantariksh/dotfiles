@@ -1,18 +1,17 @@
 {
     "sources": [
         {
-            "enabled": null,
+            "enabled": true,
             "name": "Noctalia Plugins",
             "url": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        {
-            "enabled": false,
-            "name": "Kolaveri",
-            "url": "https://github.com/rscipher001/noctalia-plugins"
         }
     ],
     "states": {
         "notes-scratchpad": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "polkit-agent": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
@@ -28,8 +27,8 @@
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
-        "timer.bak": {
-            "enabled": false,
+        "timer-improved": {
+            "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         }
     },

@@ -265,12 +265,12 @@ binds {
   Super+B { spawn "zen-browser"; }
   // Open browser: helium
   Super+Shift+B { spawn "helium-browser"; }
-  // Open music player: spotify
-  Super+M { spawn "spotify"; }
+  // Open music player: rmpc
+  Super+M { spawn "kitty" "-e" "rmpc"; }
   // Open discord client: vesktop
   Super+D { spawn "vesktop" "--ozone-platform-hint=auto" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open index search: fsearch
-  Super+S { spawn "fsearch"; }
+  Super+Shift+S { spawn "fsearch"; }
   // Open File explorer: dolphin
   Super+E { spawn "dolphin"; }
   // Open TUI File Explorer: yazi
@@ -287,6 +287,8 @@ binds {
   Super+Shift+N { spawn "obsidian" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open emoji picker: emote
   Super+semicolon { spawn "emote"; }
+  // Open local sharing app: localsend
+  Super+S { spawn "localsend"; }
 
   // Execute noctalia: app picker (launcher)
   Super+Shift+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }

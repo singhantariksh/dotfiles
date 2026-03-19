@@ -59,15 +59,6 @@
       ]))
     ),
   (
-      prop: (kind: Property(Artist), style: (fg: "#7aa2f7"),
-        default: (kind: Text("Unknown Artist"), style: (fg: "#7dcfff"))),
-      width: "23%",
-      label_prop: (kind: Group([
-      (kind: Text("Artist "), style: (fg: "#c0caf5")),
-      (kind: Text(""), style: (fg: "#7aa2f7"))
-      ]))
-    ),
-  (
       prop: (kind: Property(Title), style: (fg: "#7aa2f7"),
         default: (kind: Property(Filename), style: (fg: "#7dcfff"),
           default: (kind: Text("Unknown Title"), style: (fg: "#7dcfff")))),
@@ -78,9 +69,18 @@
       ]))
     ),
   (
+      prop: (kind: Property(Artist), style: (fg: "#7aa2f7"),
+        default: (kind: Text("Unknown Artist"), style: (fg: "#7dcfff"))),
+      width: "26%",
+      label_prop: (kind: Group([
+      (kind: Text("Artist "), style: (fg: "#c0caf5")),
+      (kind: Text(""), style: (fg: "#7aa2f7"))
+      ]))
+    ),
+  (
       prop: (kind: Property(Album), style: (fg: "#7aa2f7"),
         default: (kind: Text("Unknown Album"), style: (fg: "#7dcfff"))),
-      width: "33%",
+      width: "28%",
       label_prop: (kind: Group([
       (kind: Text("Album "), style: (fg: "#c0caf5")),
       (kind: Text("󰀥"), style: (fg: "#7aa2f7"))
@@ -89,8 +89,8 @@
   (
       prop: (kind: Property(Duration), style: (fg: "#7aa2f7"),
         default: (kind: Text("-"))),
-      width: "8%",
-      alignment: Right,
+      width: "10%",
+      alignment: Center,
       label_prop: (kind: Group([
       (kind: Text("Length "), style: (fg: "#c0caf5")),
       (kind: Text(" "), style: (fg: "#7aa2f7"))

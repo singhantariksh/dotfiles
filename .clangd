@@ -1,2 +1,11 @@
+If:
+  Language: cpp
 CompileFlags:
   Add: [-std=c++23]
+
+---
+
+If:
+  Language: c
+CompileFlags:
+  Add: [-std=c23]
