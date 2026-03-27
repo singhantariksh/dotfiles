@@ -32,6 +32,7 @@
         ],
         "preferredPlayer": "spotify",
         "spectrumFrameRate": 30,
+        "spectrumMirrored": true,
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
@@ -49,7 +50,6 @@
         "density": "comfortable",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "floating": true,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -247,6 +247,7 @@
         "monitorForColors": "",
         "predefinedScheme": "Tokyo Night",
         "schedulingMode": "off",
+        "syncGsettings": true,
         "useWallpaperColors": false
     },
     "controlCenter": {
@@ -524,6 +525,7 @@
         "showHibernateOnLockScreen": false,
         "showScreenCorners": false,
         "showSessionButtonsOnLockScreen": true,
+        "smoothScrollEnabled": true,
         "telemetryEnabled": true
     },
     "hooks": {
@@ -575,8 +577,7 @@
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
         "networkPanelView": "wifi",
-        "wifiDetailsViewMode": "grid",
-        "wifiEnabled": true
+        "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
         "autoSchedule": true,
@@ -672,6 +673,13 @@
                 "keybind": "3"
             },
             {
+                "action": "userspaceReboot",
+                "command": "pkill -f \"qs -c noctalia-shell\" ; qs -c noctalia-shell & disown",
+                "countdownEnabled": true,
+                "enabled": false,
+                "keybind": ""
+            },
+            {
                 "action": "reboot",
                 "command": "",
                 "countdownEnabled": true,
@@ -694,13 +702,6 @@
             },
             {
                 "action": "hibernate",
-                "command": "",
-                "countdownEnabled": true,
-                "enabled": false,
-                "keybind": ""
-            },
-            {
-                "action": "userspaceReboot",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": false,
@@ -785,6 +786,7 @@
         "transitionType": [
             "disc"
         ],
+        "useOriginalImages": false,
         "useSolidColor": false,
         "useWallhaven": false,
         "viewMode": "browse",

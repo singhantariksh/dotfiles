@@ -26,7 +26,7 @@ input {
     natural-scroll
     accel-speed 0.2
     accel-profile "flat"
-    disabled-on-external-mouse
+    // disabled-on-external-mouse
   }
 
   mouse {

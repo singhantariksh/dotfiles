@@ -7,7 +7,7 @@
   theme: "tokyo-night",
   cache_dir: Some("~/.cache/rmpc"),
   lyrics_dir: Some("~/Music/Lyrics"),
-  on_song_change: ["~/.local/bin/lyrics-n-count"],
+  on_song_change: ["~/.local/bin/fetch-lyrics"],
   volume_step: 5,
   max_fps: 60,
   scrolloff: 4,

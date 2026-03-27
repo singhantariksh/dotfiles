@@ -40,13 +40,13 @@
   ),
   song_table_format: [
   (
-      prop: (kind: Sticker("playCount"),style: (fg: "#7aa2f7"),
+      prop: (kind: Property(Position),style: (fg: "#7aa2f7"),
         default: (kind: Text(""), style: (fg: "#414868"))),
       width: "3",
       alignment: Center,
-      label: "Playcount",
+      label: "Position",
       label_prop: (kind: Group([
-      (kind: Text("󰆙"), style: (fg: "#7aa2f7")),
+      (kind: Text(""), style: (fg: "#7aa2f7")),
       ]))
     ),
   (
@@ -281,8 +281,8 @@
       direction: Horizontal,
       panes: [
       (size: "100%", pane: Pane(Property(content: [
-        (kind: Property(Song(Artist)), style: (fg: "#7dcfff"),
-            default: (kind: Text("Unknown Artist"), style: (fg: "#7dcfff"))),
+        (kind: Property(Song(Artist)), style: (fg: "#7aa2f7"),
+            default: (kind: Text("Unknown Artist"), style: (fg: "#7aa2f7"))),
         (kind: Text(" - "), style: (fg: "#c0caf5")),
         (kind: Property(Song(Album)),style: (fg: "#7aa2f7" ),
             default: (kind: Text("Unknown Album"), style: (fg: "#7aa2f7"))),

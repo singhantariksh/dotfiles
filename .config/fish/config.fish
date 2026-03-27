@@ -62,7 +62,19 @@ set -gx LS_COLORS "$(vivid generate tokyonight-night)"
 # aliases
 alias cat="bat"
 
-alias gpp="g++ -std=c++23"
+alias gpp="g++"
+
+# learning
+alias gcc23="gcc -std=c23 -Wall -Wextra -Wconversion -Wpedantic -Wshadow -g"
+alias gpp23="g++ -std=c++23 -Wall -Wextra -Wconversion -Wpedantic -Wshadow -g"
+
+# fast but safe for critical calculations
+alias gccf="gcc -std=c23 -O2 -march=native -flto -fno-plt -DNDEBUG"
+alias gppf="g++ -std=c++23 -O2 -march=native -flto -fno-plt -DNDEBUG"
+
+# fast as fuck (unsafe mathematics and ignores some safety checks)
+alias gccfaf="gcc -std=c23 -Ofast -march=native -flto -fno-plt -DNDEBUG"
+alias gppfaf="g++ -std=c++23 -Ofast -march=native -flto -fno-plt -DNDEBUG"
 
 alias lg="lazygit"
 

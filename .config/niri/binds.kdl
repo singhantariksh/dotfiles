@@ -324,12 +324,9 @@ binds {
   Super+Ctrl+Print { spawn "nirishot" "screenshot-screen"; }
   Super+Shift+Print { spawn "nirishot" "screenshot-window"; }
   Super+Alt+Print { spawn "hyprpicker" "-a"; }
+  // Execute custom script: toggle touchpad state
+  Super+F10 { spawn "toggle-touchpad"; }
 
   // Niri: Switch Keyboard Layout
   Ctrl+Super+Space { switch-layout "next"; }
-
-  // Rebind: XF86TouchpadOn
-  XF86TouchpadOn { spawn "toggle-touchpad"; }
-  // Rebind: XF86TouchpadOff
-  XF86TouchpadOff { spawn "toggle-touchpad"; }
 }

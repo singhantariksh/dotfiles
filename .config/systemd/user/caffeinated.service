@@ -1,0 +1,11 @@
+[Unit]
+Description=Caffeinated (Idle Inhibitor)
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/caffeinated
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

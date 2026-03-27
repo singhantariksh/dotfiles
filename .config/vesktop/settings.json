@@ -6,14 +6,16 @@
     "splashBackground": "rgb(26, 27, 38)",
     "audio": {
         "granularSelect": false,
-        "deviceSelect": true,
+        "deviceSelect": false,
         "ignoreVirtual": true,
         "onlyDefaultSpeakers": false,
-        "workaround": true
+        "workaround": true,
+        "ignoreDevices": true
     },
     "spellCheckLanguages": [
         "en-GB",
         "en-IN",
         "en"
-    ]
+    ],
+    "hardwareVideoAcceleration": false
 }
