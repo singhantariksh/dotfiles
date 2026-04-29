@@ -16,13 +16,13 @@ end
 # ssh setup
 # ----------
 # Start ssh-agent if not already running
-if not pgrep -u (whoami) ssh-agent > /dev/null
+if not pgrep -u (whoami) ssh-agent &> /dev/null
   ssh-agent -c | source
 end
 
 # Add key if not already loaded
 if not ssh-add -l | grep -q "id_ed25519"
-  ssh-add ~/.ssh/id_ed25519 > /dev/null
+  ssh-add ~/.ssh/id_ed25519 &> /dev/null
 end
 # ----------
 
@@ -85,7 +85,7 @@ alias lla="lsd -la"
 alias lt="lsd --tree"
 alias lta="lsd --tree -a"
 
-alias cd="z"
+alias z="zellij"
 
 alias dots='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
 alias lgdots='lazygit --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
@@ -94,6 +94,9 @@ alias wcp="wl-copy"
 
 alias c="clear"
 alias n="nvim"
+
+alias rmpc="systemctl --user start mpd ; command rmpc"
+alias mpd-stop="systemctl --user stop mpd"
 # ----------
 
 # PATH directories
@@ -105,4 +108,4 @@ fish_add_path ~/.cargo/bin
 # Starship
 starship init fish | source
 # Zoxide
-zoxide init fish | source
+zoxide init fish --cmd cd | source

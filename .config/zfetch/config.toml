@@ -3,7 +3,7 @@
 [display]
 ## Show OS-specific art instead of default zfetch logo
 ## Set to true to auto-detect OS, or specify OS name to force that logo
-# os_art = true
+# os_art = false
 
 ## Custom ASCII art file path. (overrides default and OS art)
 ## The file can use {0} through {7} for color placeholders.
@@ -14,6 +14,9 @@ custom_art = "~/.config/zfetch/logo.txt"
 # image = false
 ## Optionally set a custom image path (supports ~ for home directory)
 # image_path = "~/.config/zfetch/image.png"
+
+## Art position: "left" (default) or "right"
+# art_position = "left"
 
 ## Nerd Font icons - auto-detect, force on, or force off
 nerd_fonts = true
@@ -52,6 +55,7 @@ nerd_fonts = true
 ## Toggle which items to show in Core.
 # os = true
 # kernel = true
+# platform = true
 # uptime = true
 init = false
 # os_age = true
@@ -74,10 +78,14 @@ init = false
 
 [userspace]
 ## Toggle which items to show in Userspace.
+# user = true
 # packages = true
 # terminal = true
 # shell = true
 # wm = true
-# ui = true
+ui = false
 # editor = true
 # terminal_font = true
+colors = false
+## Color swatch style: "circle" (default), "ring", or "box"
+# colors_style = "circle"

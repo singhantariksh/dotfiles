@@ -260,21 +260,21 @@ binds {
   // Open terminal emulator: kitty
   Super+Return { spawn "kitty" "-o" "env=_LAUNCHED_FROM_SHORTCUT=1"; }
   // Open app picker/launcher: fuzzel
-  Super+Space { spawn "fuzzel"; }
+  Super+Shift+Space { spawn "fuzzel"; }
   // Open browser: zen
   Super+B { spawn "zen-browser"; }
   // Open browser: helium
   Super+Shift+B { spawn "helium-browser"; }
   // Open music player: rmpc
-  Super+M { spawn "kitty" "-e" "rmpc"; }
+  Super+M { spawn-sh "systemctl --user start mpd && kitty -e rmpc"; }
   // Open discord client: vesktop
   Super+D { spawn "vesktop" "--ozone-platform-hint=auto" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open index search: fsearch
   Super+Shift+S { spawn "fsearch"; }
   // Open File explorer: dolphin
-  Super+E { spawn "dolphin"; }
+  Super+Shift+E { spawn "dolphin"; }
   // Open TUI File Explorer: yazi
-  Super+Shift+E { spawn "kitty" "-e" "yazi"; }
+  Super+E { spawn "kitty" "-e" "yazi"; }
   // Open calculator: qalculate
   XF86Calculator { spawn "qalculate-qt"; }
   // Open TUI resource monitor: btop
@@ -286,12 +286,12 @@ binds {
   // Open note taking app: obsidian
   Super+Shift+N { spawn "obsidian" "--enable-blink-features=MiddleClickAutoscroll"; }
   // Open emoji picker: emote
-  Super+semicolon { spawn "emote"; }
+  // Super+semicolon { spawn "emote"; }
   // Open local sharing app: localsend
   Super+S { spawn "localsend"; }
 
   // Execute noctalia: app picker (launcher)
-  Super+Shift+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+  Super+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
   // Execute noctalia: settings
   Super+Shift+Comma { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
   // Execute noctalia: control center
@@ -299,7 +299,7 @@ binds {
   // Execute noctalia: clipboard
   Super+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
   // Execute noctalia: emoji picker
-  // Super+semicolon { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+  Super+semicolon { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
   // Execute noctalia: session menu
   Super+X { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
   // Execute noctalia: lock screen
