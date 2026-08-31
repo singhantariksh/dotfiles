@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# $1 must be in:
+# - screenshot (user defined region)
+# - screenshot-screen (current screen)
+# - screenshot-window (current window)
+
+# Redirect output so commands don't block on unavailable stderr/stdout
+exec 2>/dev/null 1>/dev/null
+
+# 1. Clear the clipboard
+wl-copy --clear
+
+# 2. Take the screenshot
+if [[ "$1" == "screenshot" ]]; then
+  niri msg action $1
+else
+  niri msg action $1 --write-to-disk=false
+fi
+
+# 3. Wait for the new image to be ready
+while ! wl-paste -n -t image/png &>/dev/null; do
+  sleep 0.1
+done
+
+# 4. Paste image for satty
+wl-paste -t image/png | satty --filename -

@@ -1,0 +1,21 @@
+{
+    "discordBranch": "canary",
+    "minimizeToTray": true,
+    "arRPC": true,
+    "splashColor": "rgb(169, 177, 214)",
+    "splashBackground": "rgb(26, 27, 38)",
+    "audio": {
+        "granularSelect": true,
+        "deviceSelect": false,
+        "ignoreVirtual": true,
+        "onlyDefaultSpeakers": false,
+        "workaround": true,
+        "ignoreDevices": true
+    },
+    "spellCheckLanguages": [
+        "en-GB",
+        "en-IN",
+        "en"
+    ],
+    "hardwareVideoAcceleration": true
+}

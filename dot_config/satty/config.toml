@@ -1,0 +1,79 @@
+[general]
+fullscreen = false
+resize = { mode = "smart" }
+early-exit = true
+auto-copy = false
+corner-roundness = 12
+initial-tool = "brush"
+copy-command = "wl-copy"
+annotation-size-factor = 1.0
+output-filename = "~/Pictures/Satty/%s.png"
+save-after-copy = false
+default-fill-shapes = false
+primary-highlighter = "freehand"
+disable-notifications = true
+actions-on-right-click = []
+actions-on-enter = ["save-to-clipboard"]
+actions-on-escape = ["exit"]
+no-window-decoration = true
+brush-smooth-history-size = 10
+pan-step-size = 50.0
+zoom-factor = 1.1
+text-move-length = 50.0
+
+[keybinds]
+pointer = "p"
+crop = "c"
+brush = "b"
+line = "l"
+arrow = "a"
+rectangle = "r"
+ellipse = "e"
+text = "t"
+marker = "m"
+blur = "u"
+highlight = "h"
+
+[font]
+family = "Maple Mono NF"
+style = "Regular"
+fallback = [
+  "NotoSans Nerd Font",
+  "NotoSans Nerd Font Propo",
+  "NotoSans NF",
+  "NotoSans NFP",
+]
+
+[color-palette]
+palette = [
+  "#f7768e",
+  "#ff9e64",
+  "#e0af68",
+  "#9ece6a",
+  "#73daca",
+  "#7dcfff",
+  "#7aa2f7",
+  "#bb9af7",
+  "#c0caf5",
+  "#414868",
+  "#1a1b26",
+]
+
+custom = [
+  "#f5e0dc",
+  "#f2cdcd",
+  "#f5c2e7",
+  "#cba6f7",
+  "#f38ba8",
+  "#eba0ac",
+  "#fab387",
+  "#f9e2af",
+  "#a6e3a1",
+  "#94e2d5",
+  "#89dceb",
+  "#74c7ec",
+  "#89b4fa",
+  "#b4befe",
+  "#cdd6f4",
+  "#1e1e2e",
+]

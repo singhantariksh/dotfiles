@@ -1,0 +1,10 @@
+[Unit]
+Description=MPD Auto Scrobbler (mpdas) for MPD
+After=mpd.service
+
+[Service]
+ExecStart=/usr/bin/mpdas
+Restart=always
+
+[Install]
+WantedBy=default.target

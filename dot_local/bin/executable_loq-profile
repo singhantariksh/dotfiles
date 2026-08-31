@@ -1,0 +1,27 @@
+#!/bin/bash
+
+case "$1" in
+  quiet | low-power | 1)
+    echo "low-power" | sudo tee /sys/firmware/acpi/platform_profile
+    echo "Switched to Quiet / Low Power mode"
+    ;;
+  balanced | 2)
+    echo "balanced" | sudo tee /sys/firmware/acpi/platform_profile
+    echo "Switched to Balanced mode"
+    ;;
+  performance | perf | 3)
+    echo "performance" | sudo tee /sys/firmware/acpi/platform_profile
+    echo "Switched to Performance mode"
+    ;;
+  max | max-power | 0)
+    echo "max-power" | sudo tee /sys/firmware/acpi/platform_profile
+    echo "Switched to Max Power mode"
+    ;;
+  *)
+    echo "Current mode: $(cat /sys/firmware/acpi/platform_profile)"
+    echo "Available: $(cat /sys/firmware/acpi/platform_profile_choices)"
+    echo ""
+    echo "Usage: loq-profile [quiet|balanced|perf|max]"
+    echo "       loq-profile [1|2|3|0]"
+    ;;
+esac

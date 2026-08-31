@@ -1,0 +1,25 @@
+#!/bin/bash
+
+CURRENT=$(tlpctl get)
+
+case "$CURRENT" in
+  "power-saver")
+    NEXT="balanced"
+    ACPI="balanced"
+    ;;
+  "balanced")
+    NEXT="performance"
+    ACPI="performance"
+    ;;
+  "performance")
+    NEXT="power-saver"
+    ACPI="low-power"
+    ;;
+  *)
+    NEXT="balanced"
+    ACPI="balanced"
+    ;;
+esac
+
+echo "$ACPI" | sudo tee /sys/firmware/acpi/platform_profile > /dev/null
+tlpctl "$NEXT"

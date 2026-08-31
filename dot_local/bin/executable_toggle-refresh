@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Capture only the integer immediately following the "@" symbol
+CURRENT_RATE=$(niri msg outputs | rg -U 'eDP-1[\s\S]*?Current mode:[^\n]*?@\s*([0-9]+)' -or '$1')
+
+if [[ -z "$CURRENT_RATE" ]]; then
+    exit 0
+fi
+
+# Read the AC adapter state directly from the kernel
+if cat /sys/class/power_supply/*/online 2>/dev/null | grep -q "1"; then
+    TARGET_MODE="1920x1080@144.001"
+    TARGET_RATE="144"
+else
+    TARGET_MODE="1920x1080@60.001"
+    TARGET_RATE="60"
+fi
+
+if [[ "$CURRENT_RATE" != "$TARGET_RATE" ]]; then
+    niri msg output eDP-1 mode "$TARGET_MODE"
+    notify-send -u normal -t 2200 -a "" "Refresh-Rate => ${TARGET_RATE}hz"
+fi

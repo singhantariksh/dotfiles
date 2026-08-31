@@ -1,0 +1,9 @@
+[flavor]
+dark  = "tokyo-night"
+light = "tokyo-night"
+
+[git]
+unknown_sign  = ""
+modified_sign = " "
+deleted_sign  = " "
+clean_sign    = " "
