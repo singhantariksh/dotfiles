@@ -1,0 +1,90 @@
+# Window and layer rules ---------------------------
+
+# Blur all windows
+# [[window_rule]]
+# blur = false
+# blur_optimized = true
+
+# [[window_rule]]
+# match.app_id = "^dev.noctalia.Noctalia$"
+# default_floating = false
+# default_size = [1020, 900]
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_size = [800, 600]
+
+[[window_rule]]
+match.app_id = "^obsidian$"
+default_floating = false
+default_maximize_to_edges = true
+
+[[window_rule]]
+match.app_id = "^vesktop$"
+match.title = "^vesktop$"
+default_floating = false
+
+[[window_rule]]
+match.app_id = "^FSearch$"
+default_floating = false
+
+[[window_rule]]
+match.app_id = "^com\\.gabm\\.satty$"
+default_floating = false
+
+[[window_rule]]
+match.title = "^(Picture-in-Picture|Picture in picture)$"
+default_floating = true
+default_size = [640, 360]
+default_position = { x = 10, y = 10, anchor = "top_right" }
+default_pinned = true
+
+[[window_rule]]
+match.app_id = "^org\\.kde\\.dolphin$"
+match.title = "^Copying — Dolphin$"
+default_floating = true
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+[[window_rule]]
+match.app_id = "^org\\.kde\\.dolphin$"
+match.title = "^Progress Dialog — Dolphin$"
+default_floating = true
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = "^notificationtoasts_\\d+_desktop$"
+default_floating = true
+default_position = { x = 10, y = 10, anchor = "bottom_right" }
+
+[[window_rule]]
+match.app_id = "^file_chooser$"
+default_floating = true
+default_size = [1280, 720]
+
+[[window_rule]]
+match.app_id = "^(vesktop|zen)$"
+default_width = 0.65
+
+# [[window_rule]]
+# match.app_id = "^zen$"
+# # match.title = "^$"
+# match.title = ".*(Browser Toolbox|Developer Tools).*"
+# default_floating = true
+# default_width = 0.8
+# default_position = { x = 160, y = 10, anchor = "top_left" }
+
+# [[window_rule]]
+# match.title = "^notificationtoasts_.+_desktop"
+# default_position = { x = 0, y = 0, anchor = "bottom_right" }
+# default_focused = false
+# default_pinned = true
+
+# Layer rules ---------------------------
+
+# [[layer_rule]]
+# match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+# blur = true
+# blur_ignore_alpha = 0.5
+# blur_optimized = false
