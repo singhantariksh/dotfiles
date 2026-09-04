@@ -5,7 +5,7 @@
     "splashColor": "rgb(169, 177, 214)",
     "splashBackground": "rgb(26, 27, 38)",
     "audio": {
-        "granularSelect": true,
+        "granularSelect": false,
         "deviceSelect": false,
         "ignoreVirtual": true,
         "onlyDefaultSpeakers": false,

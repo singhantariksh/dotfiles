@@ -66,8 +66,8 @@ alias lsta="lsd --tree -a"
 
 alias z="zellij"
 
-alias dots='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
-alias lgdots='lazygit --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
+# alias dots='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
+# alias lgdots='lazygit -git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
 
 alias wcp="wl-copy"
 

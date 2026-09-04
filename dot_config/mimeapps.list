@@ -139,3 +139,4 @@ x-scheme-handler/lunarclient=lunarclient.desktop;
 application/vnd.amazon.mobi8-ebook=okularApplication_mobi.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/fluxer=fluxer-canary.desktop
+x-scheme-handler/itms=sidra.desktop
