@@ -1,0 +1,9 @@
+[screenshot]
+last_region = "301,144,996,591"
+
+[security_migrations]
+calendar_credentials_v1 = true
+
+[wallpaper_panel]
+flatten = false
+sort = "name_asc"

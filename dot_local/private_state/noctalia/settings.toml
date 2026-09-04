@@ -1,0 +1,352 @@
+config_version = 13
+
+[audio]
+enable_overdrive = true
+enable_sounds = true
+notification_sound = "/home/antariksh/Sounds/Dragon Ball Radar Beep.wav"
+
+[bar]
+order = [ "Main" ]
+
+    [bar.Main]
+    capsule_radius = 14
+    end = [ "tray", "widget", "widget_2", "notifications", "bluetooth", "volume", "brightness", "battery" ]
+    margin_ends = 120
+    radius = 14
+    start = [ "taskbar", "media", "privacy" ]
+    thickness = 40
+    widget_spacing = 12
+
+[battery]
+warning_threshold = 20
+
+[brightness]
+enable_ddcutil = true
+
+[calendar]
+enabled = true
+refresh_minutes = 30
+
+    [calendar.account.antarikshsingh]
+    color = "primary"
+    name = "Antariksh Singh"
+    type = "google"
+
+[control_center]
+width = 750
+
+    [control_center.calendar]
+    show_events_card = false
+    show_week_numbers = true
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "wallpaper"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/screen_recorder:toggle"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+background_opacity = 0.99999997764825821
+
+[idle]
+behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
+pre_action_fade_seconds = 30
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[location]
+latitude = 21.204758999999999
+longitude = 81.305702999999994
+
+[lockscreen]
+blur_intensity = 0.19999999552965164
+blurred_desktop = true
+tint_intensity = 0.19999999552965164
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@HDMI-A-5",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-5"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 683.0
+    cy = 586.0
+    output = "HDMI-A-5"
+    placement_height = 768.0
+    placement_width = 1366.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-5".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 752.0
+    cx = 799.5
+    cy = 739.5
+    output = "eDP-1"
+    placement_height = 899.0
+    placement_width = 1599.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 14.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = false
+        show_keyboard_layout = false
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 256.0
+    box_width = 736.0
+    cx = 799.5
+    cy = 513.5
+    output = "eDP-1"
+    placement_height = 899.0
+    placement_width = 1599.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        bands = 48
+        centered = false
+        color_2 = "secondary"
+        mirrored = true
+        reversed = false
+        show_when_idle = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 208.0
+    box_width = 208.0
+    cx = 799.5
+    cy = 169.5
+    output = "eDP-1"
+    placement_height = 899.0
+    placement_width = 1599.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = true
+        background_color = "on_primary"
+        background_opacity = 0.5
+        background_padding = 0
+        background_radius = 14
+        circle = true
+        clock_style = "analog"
+        color = "primary"
+
+[nightlight]
+enabled = true
+
+[notification]
+background_opacity = 0.99999997764825821
+position = "bottom_right"
+
+[osd]
+background_opacity = 0.99999997764825821
+
+[plugin_settings."noctalia/screen_recorder"]
+audio_codec = "aac"
+color_range = "full"
+copy_to_clipboard = true
+directory = "/home/antariksh/Videos/Screencasts"
+filename_pattern = "%s"
+hide_inactive = true
+video_codec = "hevc"
+video_qp = 23
+
+[plugin_settings."singhantariksh/obsidian-notes"]
+notes_subfolder = "Inbox"
+tasks_file = "To-Dos/To-Do Rotation.md"
+vault_dir = "/home/antariksh/Vault"
+
+[plugins]
+enabled = [ "noctalia/screen_recorder", "noctalia/translator", "singhantariksh/chronos", "singhantariksh/obsidian-notes" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "path"
+    location = "/home/antariksh/Workspaces/my-plugins"
+    name = "my-plugins"
+
+[shell]
+clipboard_auto_paste = "ctrl_v"
+clipboard_confirm_clear_history = false
+clipboard_history_max_entries = 500
+clipboard_image_action_command = "satty -f -"
+font_family = "Maple Mono NF"
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+telemetry_enabled = true
+
+    [shell.keyboard_layout.custom_labels]
+    "English (Colemak-DH Ortholinear)" = "Colemak"
+    "English (US)" = "Qwerty"
+
+    [shell.launcher]
+    auto_paste = "ctrl_v"
+
+    [shell.panel]
+    open_near_click_control_center = true
+    open_near_click_wallpaper = true
+
+    [shell.screen_corners]
+    enabled = true
+    size = 14
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "/home/antariksh/Pictures/Screenshots"
+    filename_pattern = "%s"
+    pipe_command = "satty -f -"
+    remember_last_region = true
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/antariksh/Pictures/Wallpapers"
+transition = [ "honeycomb" ]
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/antariksh/Pictures/Wallpapers/Istomin Denis 08.png"
+
+    [wallpaper.last]
+    path = "/home/antariksh/Pictures/Wallpapers/Istomin Denis 08.png"
+
+    [wallpaper.monitors.HDMI-A-5]
+    path = "/home/antariksh/Pictures/Wallpapers/Istomin Denis 08.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/antariksh/Pictures/Wallpapers/Istomin Denis 08.png"
+
+[widget.battery]
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+anchor = true
+format = "{:%H:%M | %d/%m}"
+tooltip_format = "{:%H:%M:%S | %d/%m/%y}"
+
+[widget.media]
+album_art_only = true
+art_size = 24
+hide_when_no_media = true
+
+[widget.privacy]
+active_color = "secondary"
+capsule = true
+capsule_fill = "on_primary"
+hide_inactive = true
+icon_spacing = 6
+
+[widget.taskbar]
+group_by_workspace = true
+minimal = true
+workspace_group_capsule = false
+workspace_group_content = "dots"
+workspace_label_placement = "centered"
+
+[widget.tray]
+drawer = true
+drawer_columns = 5
+match_adjacent_spacing = true
+
+[widget.volume]
+show_label = false
+
+[widget.widget]
+type = "singhantariksh/chronos:widget"
+
+[widget.widget_2]
+type = "singhantariksh/obsidian-notes:widget"
