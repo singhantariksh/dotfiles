@@ -1,4 +1,4 @@
-config_version = 13
+config_version = 14
 
 [audio]
 enable_overdrive = true
@@ -10,11 +10,11 @@ order = [ "Main" ]
 
     [bar.Main]
     capsule_radius = 14
-    end = [ "tray", "widget", "widget_2", "notifications", "bluetooth", "volume", "brightness", "battery" ]
+    end = [ "tray", "widget", "widget_2", "notifications", "bluetooth", "network", "volume", "brightness", "battery" ]
     margin_ends = 120
     radius = 14
-    start = [ "taskbar", "media", "privacy" ]
-    thickness = 40
+    start = [ "bar", "recorder", "taskbar", "media", "privacy" ]
+    thickness = 36
     widget_spacing = 12
 
 [battery]
@@ -49,21 +49,41 @@ width = 750
     type = "wallpaper"
 
     [[control_center.shortcuts]]
-    type = "noctalia/screen_recorder:toggle"
+    type = "keyboard_layout"
 
 [desktop_widgets]
+enabled = false
 schema_version = 2
-widget_order = []
+widget_order = [ "desktop-widget-0000000000000001" ]
 
     [desktop_widgets.grid]
     cell_size = 8
     major_interval = 4
     visible = true
 
-    [desktop_widgets.widget]
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 304.0
+    box_width = 448.0
+    cx = 431.5
+    cy = 729.5
+    output = "eDP-1"
+    placement_height = 899.0
+    placement_width = 1599.0
+    rotation = 0.0
+    type = "sticker"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        image_path = "/home/antariksh/bauna-parte.webp"
+        opacity = 1.0
 
 [dock]
 background_opacity = 0.99999997764825821
+
+[hooks]
+battery_charging = "hotplug-cycle"
+battery_discharging = "hotplug-cycle"
+battery_plugged = "hotplug-cycle"
+started = "hotplug-cycle"
 
 [idle]
 behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
@@ -208,20 +228,32 @@ enabled = true
 
 [notification]
 background_opacity = 0.99999997764825821
+monitors = [ "eDP-1" ]
 position = "bottom_right"
 
 [osd]
 background_opacity = 0.99999997764825821
+monitors = [ "eDP-1" ]
+
+    [osd.kinds]
+    media = false
 
 [plugin_settings."noctalia/screen_recorder"]
 audio_codec = "aac"
+audio_source = "both"
 color_range = "full"
 copy_to_clipboard = true
 directory = "/home/antariksh/Videos/Screencasts"
 filename_pattern = "%s"
-hide_inactive = true
 video_codec = "hevc"
 video_qp = 23
+
+[plugin_settings."noctalia/translator"]
+deepl_api_key = "6f6dd2d8-e20f-4d22-af1a-9417e03080c0:fx"
+provider = "deepl"
+
+[plugin_settings."singhantariksh/chronos"]
+ring_sound = "/home/antariksh/generic_alarm.ogg"
 
 [plugin_settings."singhantariksh/obsidian-notes"]
 notes_subfolder = "Inbox"
@@ -229,9 +261,16 @@ tasks_file = "To-Dos/To-Do Rotation.md"
 vault_dir = "/home/antariksh/Vault"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/translator", "singhantariksh/chronos", "singhantariksh/obsidian-notes" ]
+enabled = [
+    "noctalia/screen_recorder",
+    "singhantariksh/obsidian-notes",
+    "noctalia/umbriel-companion",
+    "singhantariksh/chronos",
+    "noctalia/translator"
+]
 
     [[plugins.source]]
+    enabled = false
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
@@ -246,15 +285,21 @@ enabled = [ "noctalia/screen_recorder", "noctalia/translator", "singhantariksh/c
     location = "/home/antariksh/Workspaces/my-plugins"
     name = "my-plugins"
 
+    [[plugins.source]]
+    kind = "path"
+    location = "/home/antariksh/Source/official-plugins"
+    name = "official-plugins"
+
 [shell]
-clipboard_auto_paste = "ctrl_v"
+clipboard_auto_paste = "off"
 clipboard_confirm_clear_history = false
 clipboard_history_max_entries = 500
-clipboard_image_action_command = "satty -f -"
+clipboard_image_action_command = "swash"
 font_family = "Maple Mono NF"
 password_style = "random"
 polkit_agent = true
 screen_time_enabled = true
+show_location = false
 telemetry_enabled = true
 
     [shell.keyboard_layout.custom_labels]
@@ -262,7 +307,7 @@ telemetry_enabled = true
     "English (US)" = "Qwerty"
 
     [shell.launcher]
-    auto_paste = "ctrl_v"
+    auto_paste = "off"
 
     [shell.panel]
     open_near_click_control_center = true
@@ -276,7 +321,7 @@ telemetry_enabled = true
     confirm_region = true
     directory = "/home/antariksh/Pictures/Screenshots"
     filename_pattern = "%s"
-    pipe_command = "satty -f -"
+    pipe_command = "swash"
     remember_last_region = true
 
 [theme]
@@ -307,11 +352,18 @@ transition_on_startup = true
     [wallpaper.monitors.eDP-1]
     path = "/home/antariksh/Pictures/Wallpapers/Istomin Denis 08.png"
 
+[widget.bar]
+type = "noctalia/umbriel-companion:bar"
+
 [widget.battery]
 show_label = false
 
 [widget.brightness]
 show_label = false
+
+    [widget.brightness.actions]
+    scroll_down = "brightness-down 2"
+    scroll_up = "brightness-up 2"
 
 [widget.clock]
 anchor = true
@@ -320,8 +372,12 @@ tooltip_format = "{:%H:%M:%S | %d/%m/%y}"
 
 [widget.media]
 album_art_only = true
-art_size = 24
+art_size = 20
 hide_when_no_media = true
+
+[widget.network]
+show_label = false
+vpn_status = "both"
 
 [widget.privacy]
 active_color = "secondary"
@@ -329,6 +385,9 @@ capsule = true
 capsule_fill = "on_primary"
 hide_inactive = true
 icon_spacing = 6
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
 
 [widget.taskbar]
 group_by_workspace = true
@@ -344,6 +403,10 @@ match_adjacent_spacing = true
 
 [widget.volume]
 show_label = false
+
+    [widget.volume.actions]
+    scroll_down = "volume-down 2"
+    scroll_up = "volume-up 2"
 
 [widget.widget]
 type = "singhantariksh/chronos:widget"

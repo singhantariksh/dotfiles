@@ -35,8 +35,7 @@
 
 # Custom Scripts
 # "Mod+F1" = { action = "spawn:tlpctl-cycle", allow_when_locked = true }
-# "Mod+F7" = { action = "spawn:toggle-refresh", allow_when_locked = true }
-# "Mod+F10" = { action = "spawn:toggle-touchpad", allow_when_locked = true }
+"Mod+F10" = { action = "spawn:/home/antariksh/.local/bin/toggle-touchpad", allow_when_locked = true }
 
 # Screenshots & Utilites
 "Ctrl+Shift+1" = "spawn:noctalia msg screenshot-region"
@@ -60,7 +59,7 @@
 "Ctrl+Alt+Delete" = "session-quit"
 "Mod+Shift+P" = "dpms-off"
 "Ctrl+Mod+Space" = "keyboard-layout-next"
-# "Mod+F1" = "spawn:noctalia msg power-cycle"
+"Mod+F1" = "spawn:noctalia msg power-cycle"
 "Mod+X" = "spawn:noctalia msg panel-toggle session"
 "Alt+Mod+L" = "spawn:noctalia msg session lock"
 "Alt+Mod+S" = { action = "spawn:noctalia msg session lock-and-suspend", allow_when_locked = true }

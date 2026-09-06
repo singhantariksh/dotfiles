@@ -1,23 +1,13 @@
 #!/bin/bash
 
-FILE="$HOME/.config/niri/input.kdl"
-KEYWORD="disabled-on-external-mouse"
+# Target the TOML file where your touchpad settings live
+FILE="$HOME/.config/umbriel/touchpad.toml"
+KEYWORD="disable_on_external_mouse"
 
-# Check if the file exists
-if [ ! -f "$FILE" ]; then
-  echo "Error: Configuration file not found at $FILE"
-  exit 1
-fi
-
-# Check if the line is currently commented out
-if grep -q "^\s*//\s*$KEYWORD" "$FILE"; then
-  # It is commented: Uncomment it
-  sed -i "s|^\(\s*\)//\s*$KEYWORD|\1$KEYWORD|" "$FILE"
-  # qs -c noctalia-shell ipc call toast send '{"title": "Touchpad Disabled", "icon": "device-ipad-off" ,"duration": 1600}'
-  notify-send -u normal -t 1600 -a "" "Touchpad-Toggle" "set to disable on external"
-else
-  # It is active: Comment it out
-  sed -i "s|^\(\s*\)$KEYWORD|\1// $KEYWORD|" "$FILE"
-  # qs -c noctalia-shell ipc call toast send '{"title": "Touchpad Enabled", "icon": "device-ipad-check" ,"duration": 1600}'
-  notify-send -u normal -t 1600 -a "" "Touchpad-Toggle" "set to keep enabled"
+if grep -q "^\s*$KEYWORD\s*=\s*true" "$FILE"; then
+  sed -i "s/^\(\s*\)$KEYWORD\s*=\s*true/\1$KEYWORD = false/" "$FILE"
+  noctalia msg notification-show "Touchpad Enabled"
+else 
+  sed -i "s/^\(\s*\)$KEYWORD\s*=\s*false/\1$KEYWORD = true/" "$FILE"
+  noctalia msg notification-show "Touchpad Disabled"
 fi

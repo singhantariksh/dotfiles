@@ -19,17 +19,20 @@ end
 # ssh setup
 # ----------
 # Define a predictable socket path for all shell instances
-set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
+# set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Start the agent and bind it to the specific socket if it is not running
-if not pgrep -u (whoami) ssh-agent > /dev/null
-  ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-end
+# if not pgrep -u (whoami) ssh-agent > /dev/null
+#   ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+# end
 
 # Add key if not already loaded
-if not ssh-add -l | grep -q "id_ed25519" 2>/dev/null
-  ssh-add ~/.ssh/id_ed25519 2>/dev/null
-end
+# if not ssh-add -l | grep -q "id_ed25519" 2>/dev/null
+#   ssh-add ~/.ssh/id_ed25519 2>/dev/null
+# end
+
+# Define a socket path for all shell instances with gnome keyring
+set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gcr/ssh"
 # ----------
 
 # Vi mode in Fish
@@ -69,7 +72,8 @@ alias z="zellij"
 # alias dots='/usr/bin/git --git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
 # alias lgdots='lazygit -git-dir=$HOME/Source/dotfiles/ --work-tree=$HOME'
 
-alias wcp="wl-copy"
+alias wlc="wl-copy"
+alias wlp="wl-paste"
 
 alias c="clear"
 alias n="nvim"

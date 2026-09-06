@@ -9,4 +9,5 @@ files = [
   "input.toml",
   "keybinds.toml",
   "rules.toml",
+  "touchpad.toml"
 ]

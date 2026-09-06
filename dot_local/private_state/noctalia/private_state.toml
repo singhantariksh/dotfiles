@@ -1,8 +1,11 @@
 [screenshot]
-last_region = "301,144,996,591"
+last_region = "506,193,585,129"
 
 [security_migrations]
 calendar_credentials_v1 = true
+
+[theme_templates]
+applied_builtin_ids = ""
 
 [wallpaper_panel]
 flatten = false

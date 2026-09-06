@@ -17,7 +17,6 @@ natural_scroll = true
 accel_profile = "adaptive" # "flat", "adaptive", or "custom <step> <points...>"
 sensitivity = 0.2          # pointer speed, -1.0 to 1.0
 disable_while_typing = true
-disable_on_external_mouse = true
 
 [input.mouse]
 natural_scroll = false

@@ -2,7 +2,7 @@
 
 [output."eDP-1"]
 enabled = true             # false powers the monitor off and removes it from the desktop
-mode = "1920x1080@60.001"
+mode = "1920x1080@144.001"
 position = [0, 0]
 scale = 1.2
 vrr = "fullscreen"         # "disabled" (default), "always", or "fullscreen"
